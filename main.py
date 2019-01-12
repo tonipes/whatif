@@ -1,12 +1,22 @@
 #!/usr/bin/env python
 
 import json
+import random
 
 data = json.load(open('data.json', 'r'))
 
-
 def get(*item):
-    return "Cow"
+    choice = random.choice(item)
+    unpacked = choice.split(":")
+    modifiers = unpacked[1:]
+    category = unpacked[0]
+
+    word = random.choice(data["words"][category])
+
+    final_word = word[0] + " " if "plural" not in modifiers and "noarticle" not in modifiers else ""
+    final_word += word[2] if "plural" in modifiers else word[1]
+
+    return final_word.strip()
 
 def main():
 
@@ -19,7 +29,8 @@ def main():
     for sentence in unpacked_sentences:
         inputs = [get(*i) for i in sentence[1]]
         final = sentence[0].format(*inputs)
-        print("What If ... " + final)
+        final = final.capitalize()[0] + final[1:]
+        print("What If ... " + final + "?")
 
 if __name__== "__main__":
     main()
