@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="/style.css" type="text/css"/>
+    <title>what if...</title>
+
+  </head>
+
+  <body>
+
+    <div class="container background">
+      <div class="top"></div>
+      <div id="content" class="content">
+        <div></div>
+        <div class="what-if">
+          <button type="button" onclick="generate_new_sentence()" autofocus>what if...</button>
+          <!-- <div class=controls> -->
+              <!-- <button type="button" onclick="generate_new_sentence()" autofocus>Generate</button> -->
+            <!-- </div> -->
+        </div>
+        <p id="sentence" class="sentence">...</p>
+
+      </div>
+      <div class="bottom"></div>
+
+    </div>
+    <script type='text/javascript' src='/jquery-3.3.1.min.js'></script>
+    <script type='text/javascript' src='/typed.min.js'></script>
+    <script type='text/javascript' src='/generator.js'></script>
+
+  </body>
+
+</html>
